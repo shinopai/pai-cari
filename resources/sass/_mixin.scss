@@ -1,0 +1,32 @@
+/* mixin */
+/* media query */
+@mixin mq($breakpoint) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+/* font size 12px */
+@mixin fs-12 {
+  font-size: clamp(1rem, 0.927rem + 0.36vw, 1.2rem);
+}
+
+/* font size 15px */
+@mixin fs-15 {
+  font-size: clamp(1.3rem, 1.227rem + 0.36vw, 1.5rem);
+}
+
+/* font size 20px */
+@mixin fs-20 {
+  font-size: clamp(1.8rem, 1.727rem + 0.36vw, 2rem);
+}
+
+/* font size 24px */
+@mixin fs-24 {
+  font-size: clamp(2.2rem, 2.127rem + 0.36vw, 2.4rem);
+}
+
+/* font size 28px */
+@mixin fs-28 {
+  font-size: clamp(2.6rem, 2.527rem + 0.36vw, 2.8rem);
+}

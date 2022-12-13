@@ -1,0 +1,329 @@
+@import "_basic";
+@import "_mixin";
+
+/* header */
+.header {
+  padding: 10px 0;
+  &__inner {
+    justify-content: space-between;
+  }
+  &__item {
+    &--before {
+      width: 70%;
+      align-items: center;
+      column-gap: 20px;
+    }
+    &--after {
+      width: 30%;
+      @include fs-15;
+      justify-content: flex-end;
+      align-items: center;
+    }
+  }
+  &__logo {
+    width: 120px;
+  }
+  &__search-form {
+    width: 65%;
+    &-text {
+      width: 90%;
+      background-color: $color-gray;
+      border: none;
+      @include fs-15;
+      padding: 5px 10px;
+      border-radius: 5px 0 0 5px;
+    }
+    &-submit {
+      width: 10%;
+      border: none;
+      border-radius: 0 5px 5px 0;
+      background-image: url("/images/ico_search.png");
+      background-repeat: no-repeat;
+      background-size: 25px 25px;
+      background-position: 50%;
+      cursor: pointer;
+    }
+  }
+  &__list {
+    column-gap: 20px;
+    &-link {
+      padding: 5px 10px;
+      border-radius: 5px;
+      &:hover {
+        background-color: $color-gray;
+      }
+      &--red {
+        background-color: $color-red;
+        color: #fff;
+        font-weight: 700;
+        padding: 5px 10px;
+        border-radius: 5px;
+      }
+      &.not-link {
+        pointer-events: none;
+        cursor: pointer;
+        &:hover {
+          background-color: $color-gray;
+        }
+      }
+    }
+  }
+}
+
+/* account menu */
+.account {
+  &-menu {
+    box-shadow: 8px 7px 10px -9px #777777;
+    border-radius: 10px;
+    padding: 20px;
+    width: 400px;
+    background-color: #fff;
+    position: absolute;
+    top: 30px;
+    right: 10px;
+    &.hidden {
+      display: none;
+    }
+    &__item {
+      padding: 15px 0;
+      position: relative;
+      &:not(.not-link) {
+        border-bottom: 1px solid $color-gray;
+        &::after {
+          content: "";
+          background: url(/images/ico_link.png) no-repeat;
+          background-size: contain;
+          display: inline-block;
+          width: 25px;
+          height: 25px;
+          position: absolute;
+          right: 0;
+          top: calc(50% - 25px / 2);
+        }
+      }
+    }
+    &__data {
+      column-gap: 10px;
+      align-items: center;
+    }
+    &__img {
+      width: 35px;
+    }
+    &__name {
+      @include fs-15;
+      font-weight: 700;
+    }
+    &__form {
+      @include fs-15;
+    }
+    &__link {
+      @include fs-15;
+      &--blue {
+        color: #1877f2;
+      }
+    }
+  }
+  &-btn {
+    position: relative;
+  }
+}
+
+/* footer */
+.footer {
+  background-color: $color-gray;
+  &__upper {
+    padding: 25px 0;
+    column-gap: 25px;
+  }
+  &__list {
+    @include fs-15;
+    width: 25%;
+    &-title {
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+    &-item {
+      margin-left: 0;
+      margin-bottom: 5px;
+    }
+  }
+  &__lower {
+    padding: 25px 0;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__icons {
+    column-gap: 20px;
+  }
+  &__ico {
+    width: 29px;
+  }
+  &__copy {
+    @include fs-12;
+  }
+}
+
+/* form */
+.form {
+  width: min(100%, 568px);
+  padding: 50px 0;
+  margin: 0 auto;
+  &__heading {
+    @include fs-24;
+    text-align: center;
+    margin-top: 0;
+  }
+  &__item {
+    margin-bottom: 20px;
+  }
+  &__input {
+    @include fs-15;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #000;
+    &--submit {
+      @include fs-15;
+      background-color: #1877f2;
+      border: none;
+      font-weight: 700;
+      cursor: pointer;
+      color: #fff;
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  }
+  &__line {
+    margin-top: 20px;
+  }
+  &__txt {
+    @include fs-15;
+    margin-top: 40px;
+    font-weight: normal;
+    text-align: center;
+  }
+  &__link {
+    @include fs-15;
+    text-align: center;
+    color: $color-red;
+    font-weight: 700;
+    border: 1px solid $color-red;
+    border-radius: 5px;
+    padding: 10px;
+    &:hover {
+      background-color: rgba(227, 43, 54, 0.1);
+    }
+  }
+}
+
+/* error message */
+.err-msg {
+  @include fs-15;
+  color: $color-red;
+}
+
+/* main visual */
+.mv {
+  margin-top: 40px;
+  &__bnr {
+    border-radius: 10px;
+  }
+}
+
+/* おすすめの商品 */
+.list {
+  margin-top: 40px;
+  &__body {
+    margin-top: 25px;
+    justify-content: space-between;
+    row-gap: 30px;
+  }
+  &__item {
+    width: 18%;
+  }
+  &__img {
+    height: 190px;
+    position: relative;
+    border: 1px solid $color-gray;
+    border-radius: 10px;
+    img {
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  &__label {
+    @include fs-20;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    font-weight: 700;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 0 100vh 100vh 0;
+    padding: 5px 10px;
+  }
+  &__name {
+    @include fs-15;
+    font-weight: normal;
+  }
+}
+
+/* 商品詳細ページ */
+.detail {
+  margin-top: 20px;
+  justify-content: space-between;
+  &__img {
+    width: 55%;
+  }
+  &__mass {
+    width: 40%;
+  }
+  &__name {
+    @include fs-24;
+    margin: 0;
+  }
+  &__price {
+    @include fs-28;
+    span {
+      font-size: 0.43em;
+      margin-left: 5px;
+    }
+  }
+  &__postage {
+    margin-left: 5px;
+  }
+  &__heading {
+    @include fs-20;
+    color: #666666;
+  }
+  &__desc {
+    @include fs-15;
+  }
+  &__date {
+    @include fs-15;
+  }
+  &__data {
+    @include fs-15;
+    border-top: 1px solid $color-gray;
+    border-bottom: 1px solid $color-gray;
+    padding: 30px 0;
+    dt {
+      font-weight: 700;
+      float: left;
+      &.user-img {
+        img {
+          width: 48px;
+        }
+      }
+    }
+    dd {
+      margin-left: 150px;
+      margin-bottom: 15px;
+      &.user-name {
+        margin-left: 65px;
+        margin-top: 15px;
+      }
+    }
+  }
+}

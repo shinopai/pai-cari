@@ -1,0 +1,90 @@
+@import "_mixin";
+$fa-font-path: "@fortawesome/fontawesome-free/webfonts";
+@import "@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "@fortawesome/fontawesome-free/scss/solid.scss";
+@import "@fortawesome/fontawesome-free/scss/brands.scss";
+@import "@fortawesome/fontawesome-free/scss/regular.scss";
+
+/* basic style */
+* {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  line-height: 1.5;
+  color: #333;
+}
+body,
+html {
+  margin: 0;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", Meiryo, sans-serif;
+}
+p,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+ul,
+li,
+option,
+span,
+dt,
+dd {
+  font-size: 1em;
+}
+a {
+  text-decoration: none;
+  display: block;
+}
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+img {
+  width: 100%;
+  vertical-align: bottom;
+  display: block;
+}
+figure {
+  margin: 0;
+}
+table {
+  width: 100%;
+}
+
+/* basic class */
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.contents {
+  display: contents;
+}
+.relative {
+  position: relative;
+}
+.wrap {
+  width: min(95%, 1200px);
+  margin: 0 auto;
+}
+.section-heading {
+  @include fs-20;
+  margin: 0;
+}
+.back-btn {
+  @include fs-24;
+  cursor: pointer;
+}
+
+/* basic color */
+$color-red: #ff333f;
+$color-gray: #f5f5f5;
+
+/* breakpoints */
+$breakpoints: (
+  "w-960": "screen and (max-width: 960px)",
+  "w-768": "screen and (max-width: 768px)",
+  "w-520": "screen and (max-width: 520px)",
+) !default;
