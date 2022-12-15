@@ -26,4 +26,13 @@ class Item extends Model
     {
         return $this->belongsToMany(User::class);
     }
+
+    // 自分が表示中の商品にいいねをしているか
+    public static function checkKeepItem($itemId)
+    {
+        $item = Item::find($itemId);
+        $res = $item->user_keeps()->get();
+
+        return $res->isNotEmpty();
+    }
 }

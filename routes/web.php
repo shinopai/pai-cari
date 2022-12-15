@@ -22,3 +22,5 @@ require __DIR__.'/auth.php';
 
 // items
 Route::resource('items', ItemsController::class);
+Route::post('/items/{item}/keep', [ItemsController::class, 'keepItem'])->name('items.keep')->middleware('auth');
+Route::delete('/items/{item}/remove-keep', [ItemsController::class, 'removeKeep'])->name('items.removeKeep')->middleware('auth');

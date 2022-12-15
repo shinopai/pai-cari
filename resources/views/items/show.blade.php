@@ -19,6 +19,29 @@
       >￥{{ number_format($item->price) }}<span>(税込み)</span></span
     >
     <span class="detail__postage">{{ $item->postage }}</span>
+    @if(App\Models\Item::checkKeepItem($item->id))
+    <form
+      action="{{ route('items.removeKeep', ['item' => $item->id]) }}"
+      method="post"
+      class="detail__ico"
+    >
+      @csrf @method('delete')
+      <img src="{{ asset('images/ico_heart_red.png') }}" alt="" srcset="" />
+      <figcaption>{{ $keep_count }}</figcaption>
+      <input type="submit" value="" />
+    </form>
+    @else
+    <form
+      action="{{ route('items.keep', ['item' => $item->id]) }}"
+      method="post"
+      class="detail__ico"
+    >
+      @csrf
+      <img src="{{ asset('images/ico_heart.png') }}" alt="" srcset="" />
+      <figcaption>いいね！</figcaption>
+      <input type="submit" value="" />
+    </form>
+    @endif
     <h3 class="detail__heading">商品の説明</h3>
     <p class="detail__desc">{{ $item->description }}</p>
     <p class="detail__date">{{ $item->created_at->diffForHumans(); }}</p>
