@@ -27,6 +27,11 @@ class Item extends Model
         return $this->belongsToMany(User::class);
     }
 
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
     // 自分が表示中の商品にいいねをしているか
     public static function checkKeepItem($itemId)
     {

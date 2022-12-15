@@ -149,7 +149,8 @@ return [
         'name' => 'ユーザー名',
         'email' => 'メールアドレス',
         'password' => 'パスワード',
-        'password_confirmation' => 'パスワード(確認)'
+        'password_confirmation' => 'パスワード(確認)',
+        'body' => 'コメント内容'
     ],
 
 ];

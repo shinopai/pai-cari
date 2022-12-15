@@ -52,6 +52,11 @@ class User extends Authenticatable
         return $this->hasMany(Item::class);
     }
 
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
     public function item_keeps()
     {
         return $this->belongsToMany(Item::class);

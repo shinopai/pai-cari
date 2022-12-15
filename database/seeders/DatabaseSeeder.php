@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
         // ]);
         // $this->call(BrandTableSeeder::class);
         // $this->call(UserTableSeeder::class);
-        $this->call(ItemTableSeeder::class);
+        // $this->call(ItemTableSeeder::class);
+        $this->call(CommentTableSeeder::class);
     }
 }

@@ -176,6 +176,10 @@
   &__item {
     margin-bottom: 20px;
   }
+  &__label {
+    @include fs-14;
+    font-weight: 700;
+  }
   &__input {
     @include fs-15;
     width: 100%;
@@ -193,6 +197,14 @@
       padding: 10px;
       border-radius: 5px;
     }
+  }
+  &__textarea {
+    @include fs-15;
+    width: 100%;
+    padding: 10px;
+    resize: none;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
   }
   &__line {
     margin-top: 20px;
@@ -296,6 +308,9 @@
   &__postage {
     margin-left: 5px;
   }
+  &__icons {
+    column-gap: 20px;
+  }
   &__ico {
     width: 60px;
     margin-top: 5px;
@@ -352,6 +367,41 @@
       &.user-name {
         margin-left: 65px;
         margin-top: 15px;
+      }
+    }
+  }
+  .form__link {
+    width: 100%;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+}
+
+/* コメント */
+.comment {
+  &__item {
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+  &__ico {
+    width: 46px;
+  }
+  &__body {
+    width: 85%;
+  }
+  &__name {
+    @include fs-14;
+    margin: 0;
+  }
+  &__content {
+    @include fs-15;
+    background-color: $color-gray;
+    border-radius: 10px;
+    padding: 5px 10px;
+    p {
+      &:nth-child(2) {
+        font-size: 0.8em;
+        color: #666;
       }
     }
   }
