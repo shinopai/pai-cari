@@ -7,7 +7,8 @@
             <img src="{{ asset('images/logo_site.png') }}" alt="paicari logo">
           </h1>
         </a>
-        <form action="" method="get" class="header__search-form flex">
+        <form action="{{ route('items.search') }}" method="get" class="header__search-form flex">
+          @csrf
           <input type="text" name="search" value="" class="header__search-form-text" placeholder="なにをお探しですか？">
           <input type="submit" value="" class="header__search-form-submit">
         </form>

@@ -267,6 +267,9 @@
     @include fs-15;
     font-weight: normal;
   }
+  &__txt {
+    @include fs-15;
+  }
 }
 
 /* 商品詳細ページ */

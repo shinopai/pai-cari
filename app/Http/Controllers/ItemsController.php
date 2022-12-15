@@ -32,4 +32,13 @@ class ItemsController extends Controller
 
         return redirect()->back();
     }
+
+    public function search(Request $request)
+    {
+        $search_word = $request->search;
+
+        $items = Item::where('name', 'LIKE', '%'.$search_word.'%')->orWhere('description', 'LIKE', '%'.$search_word.'%')->get();
+
+        return view('items.search', compact('search_word', 'items'));
+    }
 }
